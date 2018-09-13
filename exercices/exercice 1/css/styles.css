@@ -7,10 +7,12 @@ h1{
     color:white;
     text-align: center;
     font-size: 34px;
+    letter-spacing: 10px;
 }
 h2{
     color:lawngreen;
     font-size: 34px;
+    letter-spacing: 10px;
 }
 p{
     color:white;
@@ -20,15 +22,23 @@ ul{
     color:white;
     font-size: 18px;
 }
+
+h3{
+    color:white;
+    font-size: 34px;
+    text-align: center;
+}
+ol{
+    color: white;
+    font-size: 18px;
+}
+
 .jeux{
     color:red;
     font-weight: bold;
 }
-h3{
-    color:white;
-    font-size: 34px;
-}
-ol{
-    color: white;
+/* id */
+#ok{
+    color: darkred;
     font-size: 18px;
 }
