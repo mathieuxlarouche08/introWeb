@@ -1,0 +1,12 @@
+function btnCalculer_onclick()
+{ 
+
+
+
+
+
+
+
+
+}
+
