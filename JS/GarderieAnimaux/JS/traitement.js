@@ -1,28 +1,35 @@
 function btnCalculer_onclick()
 
 {
-	var prix, animal, jours, toil, personne, nbrjour, rabais, hrs;
+	var prix, animal, jours, toil, personne, nbrjour, rabais, hrs, txhr, nomveterinaire, res;
+	nomveterinaire = document.getElementById("lstVeterinaire").value;
+    hrs  = parseInt(document.getElementById("txtNbrehrs").value);
+    nbrjour = document.getElementById("txtNbreJours").value;
+
+
 
  	if (document.getElementById("lstVeterinaire").value == document.getElementById("Audrey").value)
 	{
         document.getElementById("txtNbreJours").value = 2;
         document.getElementById("chkServ").checked = true;
         document.getElementById("radChien").checked = true;
-        document.getElementById("lblMessage").value = 48.29;
+        res = 48.29;
+
 	}
         else if (document.getElementById("lstVeterinaire").value == document.getElementById("Maxime").value )
         {
             document.getElementById("txtNbreJours").value = 4;
             document.getElementById("chkServ").checked = false;
             document.getElementById("radChat").checked = true;
-            document.getElementById("lblMessage").value = 77.87;
+            res = 77.87;
+
             }
             else
             {
                 document.getElementById("chkServ").checked = 5;
             }
 
-      nbrjour = document.getElementById("txtNbreJours").value;
+
     if ((nbrjour >= 1) && (nbrjour <5))
     {
        rabais = 0;
@@ -39,12 +46,34 @@ function btnCalculer_onclick()
                 {
                     rabais = 0.15;
                 }
-                jour = document.getElementById("txtNbrehrs").value
-                switch ()
+
+                switch (txhr)
+                {
+                    case "Audrey Bouchard":
+                        txhr = 25;
+                        break;
+                    case "Stéphane Tremblay":
+                        txhr =35;
+                        break;
+                    case "Maxime Simard":
+                        txhr =40;
+                        break;
+                    case "Mélissa Caron":
+                        txhr =45;
+                        break;
+                }
+                document.getElementById("lblMessage").innerHTML ="Le résultat est " + res + " Pour " +nbrjour +" Jour";
 
 
-        }
-
+}
+function btnCalculer1_onclick()
+{
+    document.getElementById("imgChien").src = "img/chiot_jack_russell_432_323_filled.jpg"
+}
+function btnCalculer2_onclick()
+{
+    document.getElementById("imgChat").src = "img/legendre-chat-religion.jpg"
+}
 
 
 

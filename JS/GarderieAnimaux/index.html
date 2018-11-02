@@ -14,9 +14,9 @@
 	<p class="Align"> <label >Choix du vétérinaire:</label>
 	<select  id="lstVeterinaire" name="lstVeterinaire">
 		<option id="Audrey" value="Audrey Bouchard" >Audrey Bouchard</option>
-		<option value="Stéphane Tremblay"  >Stéphane Tremblay</option>
+		<option  id="Stephane" value="Stéphane Tremblay"  >Stéphane Tremblay</option>
 		<option id="Maxime" value="Maxime Simard" >Maxime Simard</option>
-		<option value="Mélissa Caron" >Mélissa Caron</option>
+		<option id="Melissa" value="Mélissa Caron" >Mélissa Caron</option>
 	</select>
 
 	<p  class="Align"> Entrez le nombre de jours:<input class="champ" id="txtNbreJours" name="txtNbreJours" value="">  </p>
@@ -35,7 +35,11 @@
 	<p class="Align" id="lblMessage" name="lblMessage">le résultat s'affiche ici </p>
 
 	<!-- Bouton -->
-	<input class="label_plus" id="btnCalculer" name="btnCalculer" value="C   A   L   C   U   L   E   R" type="button" onclick="btnCalculer_onclick()"> 
+	<input class="label_plus" id="btnCalculer" name="btnCalculer" value="C   A   L   C   U   L   E   R" type="button" onclick="btnCalculer_onclick()">
+	<input class="label_plus" id="btnCalculer1" name="btnCalculer1" value="Voir img chien" type="button" onclick="btnCalculer1_onclick()">
+	<input class="label_plus" id="btnCalculer2" name="btnCalculer2" value="Voir img chat" type="button" onclick="btnCalculer2_onclick()">
+	<img id ="imgChien" name=imgChien>
+	<img id ="imgChat" name=imgChat>
 </form>
 <script src="JS/traitement.js"></script>
 </body>
