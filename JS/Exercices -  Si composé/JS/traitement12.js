@@ -6,7 +6,7 @@ function btnCalculer_onclick()
     nbr2=parseInt(document.getElementById("txtNbre2").value);
     nbr3=parseInt(document.getElementById("txtNbre3").value);
     nbr4 = 3;
-    if ((nbr1 >= nbr2) && (nbr2 =! nbr3))
+    if ((nbr1 >= nbr2) && (nbr2 != nbr3))
 	{
 		nbr4 = nbr4 + 2 * nbr1;
 	}
