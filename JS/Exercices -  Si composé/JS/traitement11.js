@@ -4,7 +4,7 @@ function btnCalculer_onclick()
 
     Nbr1 = parseInt(document.getElementById("txtNbre1").value);
     Nbr2 = parseInt(document.getElementById("txtNbre2").value);
-    if ((Nbr1 * Nbr2) >=0)
+    if (((Nbr1 > 0) && (Nbr2 > 0)) || ((Nbr1 < 0) && (Nbr2 < 0)))
     {
         Signe = "Positif";
     }
@@ -13,7 +13,7 @@ function btnCalculer_onclick()
         Signe = "Negatif";
     }
     //afficher
-    document.getElementById("btnCalculer").innerHTML = "Le signe de votre résultat est " + Signe;
+    document.getElementById("lblMessage").innerHTML = "Le signe de votre résultat est " + Signe;
  	
 
 }

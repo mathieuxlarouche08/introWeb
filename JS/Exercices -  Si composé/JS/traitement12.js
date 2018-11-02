@@ -12,7 +12,7 @@ function btnCalculer_onclick()
 	}
 	else
 	{
-		if ((nbr1 = nbr2) && (nbr2 > nbr3))
+		if (((nbr1 == nbr2) || (nbr2 > nbr3)))
 		{
 			nbr4 = nbr4 + nbr1;
 		}
@@ -22,5 +22,5 @@ function btnCalculer_onclick()
 		}
 	}
 	//afficher
-	document.getElementById("btnCalculer").innerHTML ="Le résultat est" + nbr4;
+	document.getElementById("lblMessage").innerHTML ="Le résultat est" + nbr4;
 }
