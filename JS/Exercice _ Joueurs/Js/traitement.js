@@ -1,4 +1,4 @@
-var  tabnbrjoueur = new Array(4), tot, tabnbrPoint = new array(4),
+var  tabnbrjoueur = new Array(4), tot, tabnbrPoint = new Array(4),
 cpt = 0;
 function btnAjouter_onclick()
 {
@@ -23,10 +23,11 @@ function btnAjouter_onclick()
     }
     alert(cpt);
     document.getElementById("lblReponse").innerHTML = "Numéro du joueur"+cpt;
-}
+
 function btnMoy_onclick()
 {
     var Moy, joueur
+    Points = parseInt(document.getElementById("txtPoints").value);
     Moy = 0;
     tot = 0;
     tot = tot + Points;
@@ -34,7 +35,7 @@ function btnMoy_onclick()
     {
        Moy = tot;
     }
-     document.getElementById("").innerHTML = "le total de la moyenne est" + Moy;
+     document.getElementById("btnTrouverMoy").innerHTML = "le total de la moyenne est" + Moy;
 }
 function  btnMeilleur_onclick()
 {
@@ -65,4 +66,5 @@ function btnPire_onclick()
         NomJoueur = "";
     }
     document.getElementById("lblReponse").innerHTML = "Le joueur avec le pire pointage est " + NomJoueur + PirePoint;
+}
 }
