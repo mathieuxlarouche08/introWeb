@@ -2,17 +2,13 @@ var  tabnbrjoueur = new Array(4), tot, tabnbrPoint = new Array(4),
 cpt = 0;
 function btnAjouter_onclick()
 {
-    var Points, NouvJoueur, nbrjoueur
+    var Points, NouvJoueur, nbrjoueur;
 
     NouvJoueur = document.getElementById("txtNom");
     Points = parseInt(document.getElementById("txtPoints").value);
     cpt = cpt + 1;
     tot = 0;
     tot = tot + Points;
-    for (joueur = 1; joueur>4; joueur++)
-    {
-        Moy = tot;
-    }
     if (cpt >= 4)
     {
         document.getElementById("btnTrouverMoy").disabled = false;
@@ -21,50 +17,63 @@ function btnAjouter_onclick()
         document.getElementById("btnRechercher").disabled = false;
         document.getElementById("btnAjouter").disabled = true;
     }
-    alert(cpt);
-    document.getElementById("lblReponse").innerHTML = "Numéro du joueur"+cpt;
+    document.getElementById("lblNbreJoueur").innerHTML = "Numéro du joueur"+cpt;
 
+}
 function btnMoy_onclick()
 {
-    var Moy, joueur
-    Points = parseInt(document.getElementById("txtPoints").value);
-    Moy = 0;
-    tot = 0;
-    tot = tot + Points;
-    for (joueur = 1; joueur>4; joueur++)
-    {
-       Moy = tot;
-    }
-     document.getElementById("btnTrouverMoy").innerHTML = "le total de la moyenne est" + Moy;
+    var moy;
+    Moy = caluclermoy();
+    document.getElementById("lblReponse").innerHTML = "La moyenne est de " + Moy;
 }
 function  btnMeilleur_onclick()
-{
-    document.getElementById("btnTrouverMeilleur").value();
-    document.getElementById("txtNom");
-    var NomJoueur, MeilPoint
-    NomJoueur = "";
-    MeilPoint = 0;
-    Point = 0;
-    for (MeilPoint = 1; MeilPoint>4; MeilPoint++)
-    {
-        MeilPoint = Point;
-        NomJoueur = "";
-    }
-    document.getElementById("lblReponse").innerHTML = "Le joueur avec le meilleur pointage est " + NomJoueur + MeilPoint;
+{ var MeilPoint, NomJoueur;
+    MeilPoint = Meilleur_onclick();
+    document.getElementById("lblReponse").innerHTML = "La personne qui a le meilleur score est " + NomJoueur + "avec un score de " + MeilPoint;
 }
 function btnPire_onclick()
 {
-     NomJoueur = document.getElementById("txtNom");
-    document.getElementById("btnTrouverPire").value();
+    var  PirePoint, NomJoueur;
+    PirePoint = pire_onclick();
+    document.getElementById("lblReponse").innerHTML = "La personne qui a le pire socre est" + NomJoueur + "avec un score de " +PirePoint;
+}
+function caluclermoy()
+{
+    var Moy, tot;
+    tot = 0;
+    for (i = 0; i<4;i++)
+    {
+        tot = tot + tabnbrPoint[i];
+    }
+    Moy = tot/4;
+    return Moy
+
+}
+function  Meilleur_onclick()
+{
+    var NomJoueur, MeilPoint;
+    MeilPoint = 0;
+    for (i = 0; i<4; i++)
+    {
+       MeilPoint = tabnbrPoint[i];
+       NomJoueur = tabnbrjoueur[i];
+    }
+    MeilPoint = tabnbrPoint[i];
+    return NomJoueur;
+}
+function pire_onclick()
+{
+
     var NomJoueur, PirePoint
 
     PirePoint = 0;
     Point = 0;
-    for (PirePoint = 1; PirePoint<4; PirePoint--)
+    for (i = 1; i>4; i--)
     {
-        PirePoint = Point;
-        NomJoueur = "";
+        PirePoint = tabnbrPoint[i];
+        NomJoueur = tabnbrjoueur[i];
     }
-    document.getElementById("lblReponse").innerHTML = "Le joueur avec le pire pointage est " + NomJoueur + PirePoint;
-}
+    PirePoint = tabnbrPoint[i];
+    return PirePoint;
+
 }
