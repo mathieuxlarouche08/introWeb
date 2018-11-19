@@ -2,9 +2,9 @@ var  tabnbrjoueur = new Array(4), tot, tabnbrPoint = new Array(4),
 cpt = 0;
 function btnAjouter_onclick()
 {
-    var Points, NouvJoueur, nbrjoueur;
+    var Points, NouvJoueur;
 
-    NouvJoueur = document.getElementById("txtNom");
+    tabnbrjoueur[cpt] = document.getElementById("lblNbreJoueur").value;
     Points = parseInt(document.getElementById("txtPoints").value);
     cpt = cpt + 1;
     tot = 0;
@@ -23,21 +23,21 @@ function btnAjouter_onclick()
 function btnMoy_onclick()
 {
     var moy;
-    Moy = caluclermoy();
+    Moy =calculermoy();
     document.getElementById("lblReponse").innerHTML = "La moyenne est de " + Moy;
 }
-function  btnMeilleur_onclick()
-{ var MeilPoint, NomJoueur;
-    MeilPoint = Meilleur_onclick();
-    document.getElementById("lblReponse").innerHTML = "La personne qui a le meilleur score est " + NomJoueur + "avec un score de " + MeilPoint;
+function btnTrouverMeilleur()
+{   var Max, Pos, Nom;
+    Max = Meilleur();
+    document.getElementById("lblReponse").innerHTML = "Le plus grand point est" + Max + "avec la personne" + Nom;
 }
 function btnPire_onclick()
 {
-    var  PirePoint, NomJoueur;
-    PirePoint = pire_onclick();
-    document.getElementById("lblReponse").innerHTML = "La personne qui a le pire socre est" + NomJoueur + "avec un score de " +PirePoint;
+    var  Min , Pos, Nom;
+    Min = pire();
+    document.getElementById("lblReponse").innerHTML = "Le plus petit point est" + Min + "avec" + Nom;
 }
-function caluclermoy()
+function calculermoy()
 {
     var Moy, tot;
     tot = 0;
@@ -46,34 +46,54 @@ function caluclermoy()
         tot = tot + tabnbrPoint[i];
     }
     Moy = tot/4;
-    return Moy
+    return Moy;
 
 }
-function  Meilleur_onclick()
+function  Meilleur()
 {
-    var NomJoueur, MeilPoint;
-    MeilPoint = 0;
-    for (i = 0; i<4; i++)
+    var Max, Pos;
+    Max = 0;
+    for (i = 0; i < 4 ; i++)
     {
-       MeilPoint = tabnbrPoint[i];
-       NomJoueur = tabnbrjoueur[i];
+        if (Max < tabnbrPoint[i])
+        {
+            Max = tabnbrPoint[i];
+            Pos = i;
+        }
     }
-    MeilPoint = tabnbrPoint[i];
-    return NomJoueur;
+    return pos;
+
 }
-function pire_onclick()
+function pire()
 {
 
-    var NomJoueur, PirePoint
-
-    PirePoint = 0;
-    Point = 0;
-    for (i = 1; i>4; i--)
+    var Min, pos;
+    Min = tabnbrPoint[0];
+    for (i = 0; i<4;i++)
     {
-        PirePoint = tabnbrPoint[i];
-        NomJoueur = tabnbrjoueur[i];
+        if (Min < tabnbrPoint[i])
+        {
+            Min = tabnbrPoint[i];
+            Pos = i;
+        }
     }
-    PirePoint = tabnbrPoint[i];
-    return PirePoint;
-
+    return Pos;
+}
+function trouverNom()
+{
+    var Nom;
+    Nom = document.getElementById("txtNom").value;
+    i = 0;
+    trouve = false;
+    while (trouve = false && i < 5)
+    {
+        if (tabnbrjoueur[i] == Nom)
+        {
+            trouve = true;
+        }
+        else
+        {
+            i++;
+        }
+    }
 }
