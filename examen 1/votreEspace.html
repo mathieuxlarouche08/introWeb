@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<title>Recette</title>
+	<meta  charset="UTF-8">
+	<meta name="title" content="Examen1 pratique">
+	<meta name="description" content="la page de votre espace">
+	<meta name="author" content="prenon NOM">
+	<link href="CSS/styles.css" rel="stylesheet"/>
+</head>
+<body>
+<div id="main">
+
+<!-- HEADER -->
+<header>
+	<img id="logo" src="images/logo.png" alt="Logo de Miam Miam Cuisine">
+</header>
+
+<!--NAVIGATION PRINCIPALE -->
+<nav>
+	<ul>
+		<li><a href="#">Accueil</a></li>
+		<li><a href="#">Blog</a></li>
+		<li><a href="#">Votre espace</a></li>
+		<li><a href="#">Qui sommes-nous?</a></li>
+	</ul>
+</nav>
+
+<!--CONTAINER ; SECTION/ASIDE -->
+<div id="container2">
+	<section><h1><a href="#">Votre espace</a></h1>
+			<div><label>Nom de la recette<span>*</span></label><input type="text" name="txtNom" size="30" ></div>
+	        <div><label>Nombre d'étoile<span>*</span></label><input type="text" name="txtEtoile" size="30"></div>
+			<div><label>Appréciation</label><input type="radio" name="appreciation" value="bon" checked> Bon <input type="radio" name="appreciation" value="Mauvais"> Mauvais</div>
+			<div><label for="type">Catégorie</label>
+			<select name="type">
+				<option value="adulte" selected>Entrée</option>
+				<option value="adolescent">Plat Principal</option>
+				<option value="enfant">Dessert</option>
+			</select></div>
+			<div id="Boutons"><input class="bouton" value="Envoyer"  type="submit"/>   <input class="bouton" type="reset" value="Réintialiser"/></div>	
+	</section>
+	<section>
+
+	</section>
+</div>
+<!-- FOOTER -->
+<footer>
+	<p id="piedPage">© Miam Miam Cuisine, 2018 Tous droits réservés</p>
+</footer>
+</div>
+</body>
+</html>

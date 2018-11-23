@@ -2,15 +2,25 @@ function btnCalculer_onclick()
 {
     if (ValideChampObli() === true)
     {
-        TraiterInfos();
+        if (ValideFormat() === true)
+        {
+            TraiterInfos();
+        }
+
     }
 }
-function ValideChampObli()
-{
-    var Valide = false;
-    if ((ValideExist("txtNbre1")===true) && (ValideExist("txtNbre2")===true) && ValideExist("txtOperateur"))
+function ValideChampObli() {
+    var Valide = true;
+    var tabnomId = new Array("txtNbre1", "txtNbre2", "txtOperateur");
+
+    for (i = 0; i < 3; i++)
     {
-        Valide = true;
+        if (ValideExist(tabnomId[i]) == false)
+        {
+           Valide = false;
+        }
+
+
     }
     return Valide;
 }
@@ -59,4 +69,29 @@ function CalculerRes(nbr1, nbr2, operation)
             break;
     }
     return res;
+}
+function ValideFormat()
+{
+    var Valide = true;
+    if ((valideNo(document.getElementById("txtNbre1").value) && valideNo(document.getElementById("txtNbre2"))) ==false)
+    {
+        Valide = false;
+    }
+    else
+        Valide = true;
+    if (Valideop(document.getElementById("txtOperateur").value) ==false)
+    {
+        Valide = false;
+    }
+    else
+        Valide = true;
+    return Valide;
+}
+function valideNo(chaine)
+{
+   return /^[0-9]+$/.test(chaine);
+}
+function Valideop(chaine)
+{
+    return /^[+]|[-]|[*]|[/]$/.test(chaine);
 }

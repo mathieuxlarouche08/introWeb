@@ -1,3 +1,4 @@
+
 function btnCalculer_onclick()
 {
     if (ValideChampObli() === true)
@@ -75,13 +76,22 @@ function CalculerRes(lstVeterinaire, txtNbreJours, chkServ, radChien, radChat, t
 }
 function ValideChampObli()
 {
-    var Valide = true;
+    var Valide = true, tabId= new Array("txtNbreJours", "txtNbrehrs", "txtNomClient", "txtNumTel");
+  //  var tabVar = new Array("txtNbreJours", "txtNbrehrs", "txtNomClient", "txtNumTel");
+    for (i=0;i<8; i++)
+    {
+        if (ValideExist(tabId[i]) == false)
+        {
+            Valide = false;
+        }
+    }
+    return Valide;
 
 }
 function ValideExist(nomId)
 {
     var Valide;
-    if (document.getElementById(nomId)==="")
+    if (document.getElementById(nomId).value==="")
     {
         Valide = false;
         document.getElementById(nomId).style.backgroundColor = "red";
