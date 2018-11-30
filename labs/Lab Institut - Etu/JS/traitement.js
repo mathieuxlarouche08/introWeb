@@ -1,16 +1,19 @@
-function frmMembre_onclick()
+function frmMembre_onsubmit()
 {
-    var Valide = false;
+    var Valide = false, txt;
     if (ValiderChampObli() ===true)
     {
         if (ValideFormat() ===true)
         {
-            Valide = true;
-            TraiterInfos();
+
+            var Prix = TraiterInfos();
+            if( confirm("Voulez vous vous inscrire pour:" + Prix +"$" ) ==true )
+            {
+                Valide = true;
+            }
         }
-
     }
-
+    return Valide;
 }
 function ValiderChampObli()
 {
@@ -26,7 +29,7 @@ function ValiderChampObli()
 }
 function TraiterInfos()
 {
-    var Nom, Prenom, Adresse, Ville, Telephone, CodePos,CodePerm, Age;
+    var Nom, Prenom, Adresse, Ville, Telephone, CodePos,CodePerm, Age,Prix;
     Nom = document.getElementById("txtNom").value;
     Prenom = document.getElementById("txtPrenom").value;
     Adresse = document.getElementById("txtAdresse").value;
@@ -35,7 +38,25 @@ function TraiterInfos()
     CodePos = document.getElementById("txtCodePostal").value;
     CodePerm = document.getElementById("txtCodePerm").value;
     Age = document.getElementById("type").value;
-    
+
+    Age = document.getElementById("type").value;
+    if( Age ==="adulte" )
+    {
+        Prix = 90;
+    }
+    else if( Age ==="étudiant" )
+    {
+        Prix = 60;
+    }
+
+    else
+    {
+        Prix = 80;
+    }
+    return Prix
+
+   // document.getElementById("").innerHTML = "Votre tarif est" +Prix;
+
     
 }
 function ValideExist(nomId)
